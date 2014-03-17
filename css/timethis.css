@@ -1,0 +1,450 @@
+html,
+boddy,
+button,
+input,
+select,
+textarea {
+    font-family: 'Mohave';
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 1em; 
+    -ms-text-size-adjust: 1em;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+
+  
+}
+body{
+    background: #c3cbd9;
+	z-index: 0;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@font-face {
+    font-family: 'mohaveregular';
+    src: url('../fonts/mohave-webfont.eot');
+    src: url('../fonts/mohave-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mohave-webfont.woff') format('woff'),
+         url('../fonts/mohave-webfont.ttf') format('truetype'),
+         url('../fonts/mohave-webfont.svg#mohaveregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'mohavebold';
+    src: url('../fonts/mohave-bold-webfont.eot');
+    src: url('../fonts/mohave-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mohave-bold-webfont.woff') format('woff'),
+         url('../fonts/mohave-bold-webfont.ttf') format('truetype'),
+         url('../fonts/mohave-bold-webfont.svg#mohavebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+*{
+margin: 0;
+padding: 0;	
+}
+/*box hack*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+   margin: 0;
+   padding: 0; 
+}
+
+#timethisWRAP{
+position: relative;	
+width: 32em;
+max-width: 55em;	
+margin: 0 auto;
+height: auto;	
+}
+
+.btn{
+position: relative;
+margin: 0;
+padding: 0;	
+font-family:'TimeThis';
+font-size: 2.5em;	
+line-height: 1;	
+-webkit-filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.12));
+	cursor: pointer;
+	z-index: 500;
+}
+
+.btn-blue{
+	color: #82a9b0;	
+}
+
+
+#header{
+	position: relative;
+	top:0;	
+	width: 100%;
+	height: 5em;
+	background: #fff;
+	color: #82a9b0;	
+	z-index: 900;
+}
+
+.btn-new{
+	position: relative;
+	width: 1.2em;
+	height: 1.2em;
+	visibility: hidden;
+	display: none;
+	float: left;
+	margin-left: 0.8em;
+	margin-top: 0.3em;
+	line-height: 1.9;
+	/*background: url(../img/icons/clock.svg)no-repeat top left;
+    background-size: contain;*/
+}
+
+.btn-login{
+	position: relative;
+	width: 1.2em;
+	height: 1.2em;
+	visibility: hidden;
+	display: none;	
+	float: left;
+	margin-left: 0.8em;
+	margin-top: 0.2em;
+	line-height: 1.5;
+		background: url(../img/icons/key.svg)no-repeat top left;
+    background-size: contain;
+}
+
+
+#header p{
+	position: relative;
+	float: left;
+	margin: 0;	
+	margin-left: 0.5em;	
+	font-size: 3em;
+}
+
+#header h1{
+	position: relative;
+	float: left;
+	margin: 0;	
+	margin-left: 0.5em;	
+	font-size: 3em;
+	line-height: 1.5em;
+	font-weight: lighter;	
+}
+
+
+
+
+
+
+#wrap{
+	position: absolute;
+	display: block;	
+	width: 100%;
+	height: auto;
+}
+/********************************************************************/
+
+.timer{
+	position: relative;
+	margin: 0;
+	padding: 0;	
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	width: 100%;
+	height: auto;	
+	background: #ebeaea ;
+	line-height: 0;	
+	
+	  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+}
+
+
+.timer-old{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;	
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+	width: 100%;
+	height: auto;	
+	background: #d0d0d0 ;
+	line-height: 0;	
+	
+	  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+
+}
+
+
+
+.timer-menu{
+	position:relative;
+	display: inline-block;
+	float: left;
+	margin: 0;
+	margin-top: -2em;
+	margin-bottom:1em; 
+	color: #b1ad91;
+}
+
+
+
+.timer-menu p.info{
+	float: right;
+	margin-right: 0.5em;	
+}
+
+.start{
+	margin-top:0.4em; 
+	margin-left: 0.8em;	
+	display: inline-block;	
+	width: 1.2em;
+	height: 1.2em;
+	background: url(../img/icons/play2.svg)no-repeat top left;
+    background-size: contain;
+}
+.pause{
+	margin-top:0.4em; 
+	margin-left: 0.8em;	
+	display: inline-block;	
+	width: 1.2em;
+	height: 1.2em;
+	background: url(../img/icons/pause.svg)no-repeat top left;
+    background-size: contain;
+}
+.stop{
+	margin-top:0.4em; 
+	margin-left: 0.8em;	
+	display: inline-block;	
+	width: 1.2em;
+	height: 1.2em;
+	background: url(../img/icons/stop.svg)no-repeat top left;
+    background-size: contain;
+}
+
+.upload{
+	margin-top:0.4em; 
+	margin-left: 0.8em;		
+	display: inline-block;	
+	width: 1.2em;
+	height: 1.2em;
+	background: url(../img/icons/cloud-upload.svg)no-repeat top left;
+    background-size: contain;
+}			 
+
+
+.delete{
+	position: relative;
+	display: inline-block;
+	width: 99%;
+	margin-top: 0.2em;
+	height: 0.5em;
+	background: url(../img/icons/remove.svg)no-repeat top right;
+    background-size: contain;
+	background-position: right;
+}	
+
+		
+
+
+.timer-clock{
+	position: relative;
+	display:block;
+	width:94%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-left: 0.8em;
+	text-align: justify;
+	
+		
+
+}
+.timer-clock p{
+	display: inline-block;
+	margin: 0;
+	line-height: 1em;	
+}
+
+
+.timer-work-clock{
+	position: relative;	
+	color: #82a9b0;	
+	font-size: 9em;
+	text-indent: -0.05em;
+	
+		
+}
+
+.timer-total-txt{
+font-size: 2em;
+color: #56522f;	
+}
+
+.timer-total-txt span{
+color: #703c53;
+}
+
+.timer-breaktotal-txt{
+font-size: 1.55em;
+color:#b1ad91;	
+}
+
+
+.timer-dashed-line{
+position: relative;
+display: block;	
+margin: 0 auto;	
+width: 100%;
+height: 1px;	
+border-bottom: dashed 1px;
+border-color: #703c53; 	
+}
+.timer-info{
+	position: relative;	
+	display: block;	
+	max-width:30em;
+	margin-top: 1em;
+	margin-left: 1em;	
+	padding-bottom: 1em;
+	text-align: left;	
+
+}
+
+.oldDate{
+	position: relative;	
+	display: block;		
+	margin-left: 1em;
+	margin-top: -2.5em;
+	line-height: 1.5
+}
+
+
+.timer-info p{
+word-break:keep-all;	
+line-height: 1.4em;
+}
+
+.timer-info-txt{
+color: #b1ad91;
+}
+
+.client,.job,.jobnr,.person,.phone,.mail,.notes {
+ display: inline-block;	
+color: #703c53;
+cursor: text;
+min-width: 8em;
+/*border-bottom: solid 1px;	*/
+}
+
+
+/********************************************************************/
+/*HELPER CALSS*/
+/********************************************************************/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
