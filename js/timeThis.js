@@ -2,8 +2,8 @@
 // configurate calendar hook up with google
 /***************************************************************/
 
-var clientId= '283917885360-7gb5qv6oo5vagd9o4nblkmpri9uuerle.apps.googleusercontent.com'; 
-var apiKey = 'AIzaSyBdtylI9AFCdOox5fIxt3DgVzq5L7nsqI8';	
+var clientId= '283917885360-f1nuteqcblfa909mneh153o9m7sm9e0j.apps.googleusercontent.com'; 
+var apiKey = 'AIzaSyBZH2S8jK3FL8YeMyYnOUB3uM897gUV_48';	
 var scopes='https://www.googleapis.com/auth/calendar';
 
 
