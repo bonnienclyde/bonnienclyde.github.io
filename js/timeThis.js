@@ -561,25 +561,25 @@ var $timeblock=$('<div class="timer">'+
 '<div class="timer-info">'+
 	'<p>'+
 	'<span class="timer-info-txt">client:</span>'+
-	'<span class="client" contenteditable="true">who you work for</span><br>'+
+	'<span class="client" contenteditable="true"></span><br>'+
 				 
 	'<span class="timer-info-txt">job description:</span>'+
-	'<span class="job" contenteditable="true">you do what</span><br>'+
+	'<span class="job" contenteditable="true"></span><br>'+
 				 
 	'<span class="timer-info-txt">jobnr:</span>'+
-	'<span class="jobnr" contenteditable="true">ex-123476</span><br>'+
+	'<span class="jobnr" contenteditable="true"></span><br>'+
 				 
 	'<span class="timer-info-txt">Contact person:</span>'+
-	'<span class="person" contenteditable="true">who you gonna call</span><br>'+
+	'<span class="person" contenteditable="true"></span><br>'+
 				 
     '<span class="timer-info-txt">phone:</span>'+
-	'<span class="phone" contenteditable="true">ex-555-2368</span><br>'+
+	'<span class="phone" contenteditable="true"></span><br>'+
 				 
 	'<span class="timer-info-txt">mail:</span>'+
-    '<span class="mail" contenteditable="true">ghost@busters.com</span><br>'+
+    '<span class="mail" contenteditable="true"></span><br>'+
 		
 	'<span class="timer-info-txt">notes:</span>'+
-	'<span class="notes" contenteditable="true">bla bla ect ect</span>'+
+	'<span class="notes" contenteditable="true"></span>'+
 	'</p>'+	
 '</div>'+		
 '</div>'); 
