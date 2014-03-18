@@ -1,3 +1,3 @@
 bonnienclyde
 ============
-A small js/jQuery timetracket that saves yoiut time entryes to google calendar
+A small js/jQuery timetracket that saves your time entryes to your google calendar
