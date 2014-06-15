@@ -22,6 +22,8 @@ function getTimeZone() {
 
 
 
+
+
 /*
 Load google client API
 */
@@ -653,7 +655,7 @@ $("#wrap").on("click", '.btn', function(e){
 			
 		case 'btn upload':
 			$('.btn-new').css({'pointer-events':'all'})
-			
+			 checkAuth()
 
 			
 TweenMax.set($timer, {transformOrigin:"bottom center",transformPerspective:900, perspective:1000,z:1,transformStyle:"preserve-3d"});
@@ -742,6 +744,7 @@ var CalendarEntry = {"end":{"timeZone":""+getTimeZone()+"","dateTime":""+gCalDat
 	
 	
  gapi.client.load('calendar', 'v3', function() {
+
  
 	  var request = gapi.client.calendar.events.insert({'calendarId': calID,'resource': CalendarEntry});
 
