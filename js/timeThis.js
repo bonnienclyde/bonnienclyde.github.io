@@ -239,6 +239,7 @@ var Clock ={
 	
 	
 function loadThisMonth(){
+	console.log('show me this months entryes')
 var nrOfevents=0;	
 //Get first last day of month
 var x = new Date();
@@ -252,7 +253,7 @@ var thisMonthLastDay = new Date(year + (month == 12 ? 1 : 0), (month == 1 ? 12 :
 	
 //	console.log(thisMonthLastDay)
 
-	gapi.client.load('calendar', 'v3', function() {
+gapi.client.load('calendar', 'v3', function() {
 
 var request = gapi.client.calendar.events.list({ 'calendarId': calID, "singleEvents" : true, "orderBy" : "startTime", "timeMax": thisMonthLastDay,"timeMin": thisMonthFirstDay});
 
@@ -262,7 +263,7 @@ request.execute(function(resp)
 	
 	
 
-	for (var key in resp.items.reverse()) {
+for (var key in resp.items.reverse()) {
 		
 var oldTimerID =resp.items[key].id;		
 var oldTimerContent =resp.items[key].description.replace("client:", "").replace("job description:", "").replace("jobnr:", "").replace("Contact person:", "").replace("phone:", "").replace("mail:", "").replace("notes:", "").replace("timespend:", "").replace("nrofBreaks:", "").replace("breaks:", "").split(/\r\n|\r|\n/g);
@@ -361,21 +362,13 @@ loadThisMonth()
 
 
 
-
-
-
-
-
-
-
-
 /***************************************************/
 //Create Old timers from calendar "data"
 /***************************************************/
 function createOldTimers(oldTimerContent,oldTimerID,newtimer)
 {	
 
-	
+console.log("wooooho so fun seeing old jobs")	
 	
 var $oldTimer=$('<div class="timer-old">'+	
 '<div class="btn delete"></div>'+	
