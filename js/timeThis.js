@@ -672,7 +672,7 @@ $("#wrap").on("click", '.btn', function(e){
 
 			sendTimerToCalendar( $timer,$visualTimer,$visualPauseTimer)
 
-			TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});	
+TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});	
 			
 			
         } else {
@@ -683,6 +683,7 @@ $("#wrap").on("click", '.btn', function(e){
 			$('.btn-login').click(function() {
 			handleAuthClick()
 			})
+		}
 });    
 
 
