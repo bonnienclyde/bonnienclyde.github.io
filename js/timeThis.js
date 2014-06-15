@@ -648,7 +648,7 @@ $("#wrap").on("click", '.btn', function(e){
 			
 		case 'btn upload':
 			$('.btn-new').css({'pointer-events':'all'})
-			         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+			         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true});
 
 
 			
