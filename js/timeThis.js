@@ -713,7 +713,7 @@ function removeTimer(targ)
 function sendTimerToCalendar($timer,$visualTimer,$visualPauseTimer){
 	
 
-gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, areWeIn);
+gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, areWeIn);
 			
 				
 var desc='@start '+$($timer).data('timerstart')+'\n'+
@@ -741,7 +741,7 @@ var CalendarEntry = {"end":{"timeZone":""+getTimeZone()+"","dateTime":""+gCalDat
 	
  gapi.client.load('calendar', 'v3', function() {
 
- 
+ 	  console.log('inset entry in callender')
 	  var request = gapi.client.calendar.events.insert({'calendarId': calID,'resource': CalendarEntry});
 
 
