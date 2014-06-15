@@ -648,7 +648,8 @@ $("#wrap").on("click", '.btn', function(e){
 			
 		case 'btn upload':
 			$('.btn-new').css({'pointer-events':'all'})
-			 checkAuth()
+			         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+
 
 			
 TweenMax.set($timer, {transformOrigin:"bottom center",transformPerspective:900, perspective:1000,z:1,transformStyle:"preserve-3d"});
