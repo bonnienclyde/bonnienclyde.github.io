@@ -37,13 +37,13 @@ authorize
 if not authorized back to authorize.
 */
       function checkAuth() {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+        gapi.auth.authorize({client_id: clientId, scope: scopes, access_type : 'offline', immediate: true}, handleAuthResult);
 		  console.log("woop tjekker auth")
       }
 
 
 	  function handleAuthClick(event) {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+        gapi.auth.authorize({client_id: clientId, scope: scopes, access_type : 'offline', immediate: false}, handleAuthResult);
         return false;
       }	
 
@@ -76,7 +76,20 @@ if authorize check if TimeThis callendar exists
         	
 		}
       }
+/*
+Shit went sour and acces expired
 
+
+
+
+
+
+
+
+
+
+
+*/
 
 
 /*
@@ -648,7 +661,8 @@ $("#wrap").on("click", '.btn', function(e){
 			
 		case 'btn upload':
 			$('.btn-new').css({'pointer-events':'all'})
-			      
+			
+		//	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, areWeIn);     
 
 
 			
@@ -688,7 +702,11 @@ TweenMax.to(targ, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeT
 	
 })
 
-
+	function areWeIn(){
+	
+		console.log('weeee we are in')
+	}
+	
 
 /***************************************************************/
 // Remove timer from dom 
@@ -713,7 +731,7 @@ function removeTimer(targ)
 function sendTimerToCalendar($timer,$visualTimer,$visualPauseTimer){
 	
 
-gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, areWeIn);
+
 			
 				
 var desc='@start '+$($timer).data('timerstart')+'\n'+
@@ -789,11 +807,7 @@ console.log("reloading stuff")
 	
 	
 	
-	function areWeIn(){
-	
-		console.log('weeee we are in')
-	}
-	
+
 	
 	
 	
