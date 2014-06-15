@@ -4,9 +4,11 @@
 
 var clientId= '283917885360-f1nuteqcblfa909mneh153o9m7sm9e0j.apps.googleusercontent.com'; 
 var apiKey = 'AIzaSyBZH2S8jK3FL8YeMyYnOUB3uM897gUV_48';	
-var scopes='https://www.googleapis.com/auth/calendar';
+var scopes='https://www.googleapis.com/auth/calendar&access_type=offline';
 
-
+/*
+https://accounts.google.com/o/oauth2/auth1?scope=https://www.googleapis.com/auth/drive2&response_type=code3&access_type=offline4&redirect_uri=https://developers.google.com/oauthplayground5&approval_prompt=force6&client_id=407408718192.apps.googleusercontent.com7&hl=en&from_login=1&as=-7352876500034384
+*/
 
 /*
 Get users timezone
