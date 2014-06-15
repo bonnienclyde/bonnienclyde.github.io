@@ -37,13 +37,13 @@ authorize
 if not authorized back to authorize.
 */
       function checkAuth() {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, access_type : 'offline', immediate: true}, handleAuthResult);
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 		  console.log("woop tjekker auth")
       }
 
 
 	  function handleAuthClick(event) {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, access_type : 'offline', immediate: false}, handleAuthResult);
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
         return false;
       }	
 
@@ -662,16 +662,32 @@ $("#wrap").on("click", '.btn', function(e){
 		case 'btn upload':
 			$('.btn-new').css({'pointer-events':'all'})
 			
-		//	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, areWeIn);     
+//Auth if token expired			
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false},function(authResult) {
+  
+        if (authResult && !authResult.error) {
+           
+			TweenMax.set($timer, {transformOrigin:"bottom center",transformPerspective:900, perspective:1000,z:1,transformStyle:"preserve-3d"});
+			TweenMax.to($timer, 1,{rotationX:120,margin:0+'px',padding:0+'px',ease:Power1.easeOut})
+
+			sendTimerToCalendar( $timer,$visualTimer,$visualPauseTimer)
+
+			TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});	
+			
+			
+        } else {
+			console.log("vi skal logge ind")	
+		    	$('.btn-new').css({'display':'none'})
+				$('.btn-login').css({'visibility':'visible','display':'block'})
+			
+			$('.btn-login').click(function() {
+			handleAuthClick()
+			})
+});    
 
 
 			
-TweenMax.set($timer, {transformOrigin:"bottom center",transformPerspective:900, perspective:1000,z:1,transformStyle:"preserve-3d"});
-TweenMax.to($timer, 1,{rotationX:120,margin:0+'px',padding:0+'px',ease:Power1.easeOut})
-
-sendTimerToCalendar( $timer,$visualTimer,$visualPauseTimer)
-
-TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});			
+		
 			
 		break;
 			
