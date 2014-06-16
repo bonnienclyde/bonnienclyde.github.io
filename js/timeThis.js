@@ -272,7 +272,7 @@ var request = gapi.client.calendar.events.list({ 'calendarId': calID, "singleEve
 
 request.execute(function(resp)
 {
-console.log(resp)
+console.log(resp.items)
 	
 for (var key in resp.items.reverse()) {
 		
