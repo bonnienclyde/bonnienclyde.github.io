@@ -272,16 +272,17 @@ var request = gapi.client.calendar.events.list({ 'calendarId': calID, "singleEve
 
 request.execute(function(resp)
 {
-console.log(resp.items)
-	
-for (var key in resp.items.reverse()) {
-		
-var oldTimerID =resp.items[key].id;		
-var oldTimerContent =resp.items[key].description.replace("client:", "").replace("job description:", "").replace("jobnr:", "").replace("Contact person:", "").replace("phone:", "").replace("mail:", "").replace("notes:", "").replace("timespend:", "").replace("nrofBreaks:", "").replace("breaks:", "").split(/\r\n|\r|\n/g);
-		
-	   createOldTimers(oldTimerContent,oldTimerID,false)	
-}
 
+	
+if(resp.items!=='undefined ')	
+	for (var key in resp.items.reverse()) {
+
+	var oldTimerID =resp.items[key].id;		
+	var oldTimerContent =resp.items[key].description.replace("client:", "").replace("job description:", "").replace("jobnr:", "").replace("Contact person:", "").replace("phone:", "").replace("mail:", "").replace("notes:", "").replace("timespend:", "").replace("nrofBreaks:", "").replace("breaks:", "").split(/\r\n|\r|\n/g);
+
+		   createOldTimers(oldTimerContent,oldTimerID,false)	
+	}
+}
 // showTimers()
 
 
