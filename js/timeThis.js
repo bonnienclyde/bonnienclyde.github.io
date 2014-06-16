@@ -663,7 +663,7 @@ $("#wrap").on("click", '.btn', function(e){
 			$('.btn-new').css({'pointer-events':'all'})
 			
 //Auth if token expired			
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false},function(authResult) {
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},function(authResult) {
   
         if (authResult && !authResult.error) {
            
@@ -672,17 +672,13 @@ $("#wrap").on("click", '.btn', function(e){
 
 			sendTimerToCalendar( $timer,$visualTimer,$visualPauseTimer)
 
-TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});	
-			
+			TweenMax.to($timer, 1.1,{z:-200,height:0+'px',overflow:'hidden',onComplete:removeTimer,onCompleteParams:[$timer]});	
+			console.log("send timer wee")
 			
         } else {
-			console.log("vi skal logge ind")	
-		    	$('.btn-new').css({'display':'none'})
-				$('.btn-login').css({'visibility':'visible','display':'block'})
-			
-			$('.btn-login').click(function() {
+			console.log("bolloks vi skal logge ind")	
 			handleAuthClick()
-			})
+		
 		}
 });    
 
