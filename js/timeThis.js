@@ -274,7 +274,7 @@ request.execute(function(resp)
 {
 
 	
-if(resp.items!=='undefined ')	
+if(resp.items!=='undefined '){	
 	for (var key in resp.items.reverse()) {
 
 	var oldTimerID =resp.items[key].id;		
